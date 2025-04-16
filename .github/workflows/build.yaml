@@ -1,6 +1,7 @@
 name: Container Build CICD
 
 on:
+  workflow-dispatch:
   push:
     branches:
     - 'main'
