@@ -65,10 +65,10 @@ def write_to_mongo(dtime, long, lat):
         client = MongoClient(connection_string)
 
         # use your UVA computing ID for the database name
-        db = client['mst3k']
+        db = client['usp4pg']
         collection = db['locations']
         collection.insert_one({'timestamp': dtime, 'longitude': long, 'latitude': lat})
-        logger.info('Output written to MongoDB')
+        logger.info(f'Output written to MongoDB {db}')
     except Exception as e:
         logger.error(e)
         exit(1)
